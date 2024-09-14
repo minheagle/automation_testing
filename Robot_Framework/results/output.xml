@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.10.12 on linux)" generated="2024-09-14T19:07:08.110423" rpa="false" schemaversion="5">
+<suite id="s1" name="Robot Framework" source="/home/lenovo/Workspaces/Study/Auto_Test/Robot_Framework">
+<suite id="s1-s1" name="Login" source="/home/lenovo/Workspaces/Study/Auto_Test/Robot_Framework/Login.robot">
+<test id="s1-s1-t1" name="Login" line="13">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-14T19:07:08.348055" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>https://www.saucedemo.com/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-14T19:07:08.347361" elapsed="2.127379"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-14T19:07:10.475385" elapsed="0.058677"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:user-name</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-14T19:07:10.534684" elapsed="0.032991"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-14T19:07:10.569171" level="FAIL">Resolving variable '${User.username}' failed: Variable '${User}' not found.</msg>
+<arg>id:user-name</arg>
+<arg>${User.username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2024-09-14T19:07:10.568103" elapsed="0.001423">Resolving variable '${User.username}' failed: Variable '${User}' not found.</status>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${User.password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-09-14T19:07:10.570110" elapsed="0.000341"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>id:login-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-09-14T19:07:10.571053" elapsed="0.000274"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-09-14T19:07:10.571812" elapsed="0.000288"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2024-09-14T19:07:10.572596" elapsed="0.000422"/>
+</kw>
+<status status="FAIL" start="2024-09-14T19:07:08.344738" elapsed="2.229074">Resolving variable '${User.username}' failed: Variable '${User}' not found.</status>
+</test>
+<status status="FAIL" start="2024-09-14T19:07:08.145110" elapsed="2.430208"/>
+</suite>
+<status status="FAIL" start="2024-09-14T19:07:08.128564" elapsed="2.448032"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Robot Framework">Robot Framework</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Login">Robot Framework.Login</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-09-14T19:07:08.342931" level="ERROR">Error in file '/home/lenovo/Workspaces/Study/Auto_Test/Robot_Framework/Login.robot' on line 6: Replacing variables from setting 'Variables' failed: Variable '${User}' not found.</msg>
+</errors>
+</robot>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.10.12 on linux)" generated="2024-09-14T19:17:33.108296" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="/home/lenovo/Workspaces/Study/Auto_Test/Robot_Framework/Login.robot">
+<test id="s1-t1" name="Login" line="13">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-14T19:17:33.331764" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>https://www.saucedemo.com/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-14T19:17:33.331469" elapsed="2.411435"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-14T19:17:35.743386" elapsed="0.019067"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:user-name</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-14T19:17:35.762752" elapsed="0.031870"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-14T19:17:35.795426" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>id:user-name</arg>
+<arg>${User.username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-14T19:17:35.794875" elapsed="0.136164"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-09-14T19:17:35.931995" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2024-09-14T19:17:35.971026" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id:password</arg>
+<arg>${User.password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-14T19:17:35.931360" elapsed="0.114971"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-14T19:17:36.047180" level="INFO">Clicking element 'id:login-button'.</msg>
+<arg>id:login-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-14T19:17:36.046736" elapsed="0.091029"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-14T19:17:41.139117" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-14T19:17:36.138249" elapsed="5.001543"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-09-14T19:17:41.140466" elapsed="0.071565"/>
+</kw>
+<status status="PASS" start="2024-09-14T19:17:33.330496" elapsed="7.881788"/>
+</test>
+<test id="s1-t2" name="Do a GET Request and validate the response code and response body" line="23">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-09-14T19:17:41.213388" level="INFO">Creating Session using : alias=mysession, url=https://pokeapi.co/api/v2, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>https://pokeapi.co/api/v2</arg>
+<arg>verify=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-09-14T19:17:41.213060" elapsed="0.000555"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-09-14T19:17:41.542187" level="INFO">GET Request : url=https://pokeapi.co/api/v2/pokemon/ditto 
+ path_url=/api/v2/pokemon/ditto 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-09-14T19:17:41.542549" level="INFO">GET Response : url=https://pokeapi.co/api/v2/pokemon/ditto 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 14 Sep 2024 12:17:41 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '2023', 'Connection': 'keep-alive', 'Cache-Control': 'public, max-age=86400, s-maxage=86400', 'Content-Encoding': 'gzip', 'etag': 'W/"5e0d-5fWRaxlbpjY4eNJNjWKLzaZ/amE"', 'strict-transport-security': 'max-age=31556926', 'x-country-code': 'US', 'x-powered-by': 'Express', 'x-served-by': 'cache-mia-kmia1760040-MIA', 'x-cache': 'HIT', 'x-cache-hits': '1', 'x-timer': 'S1720445625.880707,VS0,VE156', 'vary': 'Origin, Accept-Encoding,cookie,need-authorization, x-fh-requested-host, accept-encoding', 'alt-svc': 'h3=":443"; ma=86400', 'CF-Cache-Status': 'HIT', 'Age': '37236', 'Accept-Ranges': 'bytes', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=TTMastS95Ofn%2FN%2B51Mtd%2FUwlNZAyHbgAKxvoTEYrwMuh%2BS0uT4S3uQ2jbjdkYz9qGCWL5mYu2QsodHefwQEMRg9NyrCjFmC6v9tx%2FRTEkgql9cldOuqzlmRSqttzmFHsT9WavNRBifFm"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Access-Control-Allow-Origin': '*', 'Server': 'cloudflare', 'CF-RAY': '8c3050baf965cdf2-SIN'} 
+ body={"abilities":[{"ability":{"name":"limber","url":"https://pokeapi.co/api/v2/ability/7/"},"is_hidden":false,"slot":1},{"ability":{"name":"imposter","url":"https://pokeapi.co/api/v2/ability/150/"},"is_hidden":true,"slot":3}],"base_experience":101,"cries":{"latest":"https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/132.ogg","legacy":"https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/132.ogg"},"forms":[{"name":"ditto","url":"https://pokeapi.co/api/v2/pokemon-form/132/"}],"game_indices":[{"game_index":76,"version":{"name":"red","url":"https://pokeapi.co/api/v2/version/1/"}},{"game_index":76,"version":{"name":"blue","url":"https://pokeapi.co/api/v2/version/2/"}},{"game_index":76,"version":{"name":"yellow","url":"https://pokeapi.co/api/v2/version/3/"}},{"game_index":132,"version":{"name":"gold","url":"https://pokeapi.co/api/v2/version/4/"}},{"game_index":132,"version":{"name":"silver","url":"https://pokeapi.co/api/v2/version/5/"}},{"game_index":132,"version":{"name":"crystal","url":"https://pokeapi.co/api/v2/version/6/"}},{"game_index":132,"version":{"name":"ruby","url":"https://pokeapi.co/api/v2/version/7/"}},{"game_index":132,"version":{"name":"sapphire","url":"https://pokeapi.co/api/v2/version/8/"}},{"game_index":132,"version":{"name":"emerald","url":"https://pokeapi.co/api/v2/version/9/"}},{"game_index":132,"version":{"name":"firered","url":"https://pokeapi.co/api/v2/version/10/"}},{"game_index":132,"version":{"name":"leafgreen","url":"https://pokeapi.co/api/v2/version/11/"}},{"game_index":132,"version":{"name":"diamond","url":"https://pokeapi.co/api/v2/version/12/"}},{"game_index":132,"version":{"name":"pearl","url":"https://pokeapi.co/api/v2/version/13/"}},{"game_index":132,"version":{"name":"platinum","url":"https://pokeapi.co/api/v2/version/14/"}},{"game_index":132,"version":{"name":"heartgold","url":"https://pokeapi.co/api/v2/version/15/"}},{"game_index":132,"version":{"name":"soulsilver","url":"https://pokeapi.co/api/v2/version/16/"}},{"game_index":132,"version":{"name":"black","url":"https://pokeapi.co/api/v2/version/17/"}},{"game_index":132,"version":{"name":"white","url":"https://pokeapi.co/api/v2/version/18/"}},{"game_index":132,"version":{"name":"black-2","url":"https://pokeapi.co/api/v2/version/21/"}},{"game_index":132,"version":{"name":"white-2","url":"https://pokeapi.co/api/v2/version/22/"}}],"height":3,"held_items":[{"item":{"name":"metal-powder","url":"https://pokeapi.co/api/v2/item/234/"},"version_details":[{"rarity":5,"version":{"name":"ruby","url":"https://pokeapi.co/api/v2/version/7/"}},{"rarity":5,"version":{"name":"sapphire","url":"https://pokeapi.co/api/v2/version/8/"}},{"rarity":5,"version":{"name":"emerald","url":"https://pokeapi.co/api/v2/version/9/"}},{"rarity":5,"version":{"name":"firered","url":"https://pokeapi.co/api/v2/version/10/"}},{"rarity":5,"version":{"name":"leafgreen","url":"https://pokeapi.co/api/v2/version/11/"}},{"rarity":5,"version":{"name":"diamond","url":"https://pokeapi.co/api/v2/version/12/"}},{"rarity":5,"version":{"name":"pearl","url":"https://pokeapi.co/api/v2/version/13/"}},{"rarity":5,"version":{"name":"platinum","url":"https://pokeapi.co/api/v2/version/14/"}},{"rarity":5,"version":{"name":"heartgold","url":"https://pokeapi.co/api/v2/version/15/"}},{"rarity":5,"version":{"name":"soulsilver","url":"https://pokeapi.co/api/v2/version/16/"}},{"rarity":5,"version":{"name":"black","url":"https://pokeapi.co/api/v2/version/17/"}},{"rarity":5,"version":{"name":"white","url":"https://pokeapi.co/api/v2/version/18/"}},{"rarity":5,"version":{"name":"black-2","url":"https://pokeapi.co/api/v2/version/21/"}},{"rarity":5,"version":{"name":"white-2","url":"https://pokeapi.co/api/v2/version/22/"}},{"rarity":5,"version":{"name":"x","url":"https://pokeapi.co/api/v2/version/23/"}},{"rarity":5,"version":{"name":"y","url":"https://pokeapi.co/api/v2/version/24/"}},{"rarity":5,"version":{"name":"omega-ruby","url":"https://pokeapi.co/api/v2/version/25/"}},{"rarity":5,"version":{"name":"alpha-sapphire","url":"https://pokeapi.co/api/v2/version/26/"}},{"rarity":5,"version":{"name":"sun","url":"https://pokeapi.co/api/v2/version/27/"}},{"rarity":5,"version":{"name":"moon","url":"https://pokeapi.co/api/v2/version/28/"}},{"rarity":5,"version":{"name":"ultra-sun","url":"https://pokeapi.co/api/v2/version/29/"}},{"rarity":5,"version":{"name":"ultra-moon","url":"https://pokeapi.co/api/v2/version/30/"}}]},{"item":{"name":"quick-powder","url":"https://pokeapi.co/api/v2/item/251/"},"version_details":[{"rarity":50,"version":{"name":"diamond","url":"https://pokeapi.co/api/v2/version/12/"}},{"rarity":50,"version":{"name":"pearl","url":"https://pokeapi.co/api/v2/version/13/"}},{"rarity":50,"version":{"name":"platinum","url":"https://pokeapi.co/api/v2/version/14/"}},{"rarity":50,"version":{"name":"heartgold","url":"https://pokeapi.co/api/v2/version/15/"}},{"rarity":50,"version":{"name":"soulsilver","url":"https://pokeapi.co/api/v2/version/16/"}},{"rarity":50,"version":{"name":"black","url":"https://pokeapi.co/api/v2/version/17/"}},{"rarity":50,"version":{"name":"white","url":"https://pokeapi.co/api/v2/version/18/"}},{"rarity":50,"version":{"name":"black-2","url":"https://pokeapi.co/api/v2/version/21/"}},{"rarity":50,"version":{"name":"white-2","url":"https://pokeapi.co/api/v2/version/22/"}},{"rarity":50,"version":{"name":"x","url":"https://pokeapi.co/api/v2/version/23/"}},{"rarity":50,"version":{"name":"y","url":"https://pokeapi.co/api/v2/version/24/"}},{"rarity":50,"version":{"name":"omega-ruby","url":"https://pokeapi.co/api/v2/version/25/"}},{"rarity":50,"version":{"name":"alpha-sapphire","url":"https://pokeapi.co/api/v2/version/26/"}},{"rarity":50,"version":{"name":"sun","url":"https://pokeapi.co/api/v2/version/27/"}},{"rarity":50,"version":{"name":"moon","url":"https://pokeapi.co/api/v2/version/28/"}},{"rarity":50,"version":{"name":"ultra-sun","url":"https://pokeapi.co/api/v2/version/29/"}},{"rarity":50,"version":{"name":"ultra-moon","url":"https://pokeapi.co/api/v2/version/30/"}}]}],"id":132,"is_default":true,"location_area_encounters":"https://pokeapi.co/api/v2/pokemon/132/encounters","moves":[{"move":{"name":"transform","url":"https://pokeapi.co/api/v2/move/144/"},"version_group_details":[{"level_learned_at":1,"move_learn_method":{"name":"level-up","url":"https://pokeapi.co/api/v2/move-learn-method/1/"},"version_group":{"name":"red-blue","url":"https://pokeapi.co/api/v2/version-group/1/"}},{"level_learned_at":1,"move_learn_method":{"name":"level-up","url":"https://pokeapi.co/api/v2/move-learn-method/1/"},"version_group":{"name":"yellow","url":"https://pokeapi.co/api/v2/version-group/2/"}},{"level_learned_at":1,"move_learn_method":{"name":"level-up","url":"https://pokeapi.co/api/v2/move-learn-method/1/"},"version_group":{"name":"gold-silver","url":"https://pokeapi.co/api/v2/version-group/3/"}},{"level_learned_at":1,"move_learn_method":{"name":"level-up","url":"https://pokeapi.co/api/v2/move-learn-method/1/"},"version_group":{"name":"crystal","url":"https://pokeapi.co/api/v2/version-group/4/"}},{"level_learned_at":1,"move_learn_method":{"name":"level-up","url":"https://pokeapi.co/api/v2/move-learn-method/1/"},"version_group":{"name":"ruby-sapphire","url":"https://pokeapi.co/api/v2/version-group/5/"}},{"level_learned_at":1,"move_learn_method":{"name":"level-up","url":"https://pokeapi.co/api/v2/move-learn-method/1/"},"version_group":{"name":"emerald","url":"https://pokeapi.co/api/v2/version-group/6/"}},{"level_learned_at":1,"move_learn_method":{"name":"level-up","url":"https://pokeapi.co/api/v2/move-learn-method/1/"},"version_group":{"name":"firered-leafgreen","url":"https://pokeapi.co/api/v2/version-group/7/"}},{"level_learned_at":1,"move_learn_method":{"name":"level-up","url":"https://pokeapi.co/api/v2/move-learn-method/1/"},"version_group":{"name":"diamond-pearl","url":"https://pokeapi.co/api/v2/version-group/8/"}},{"level_learned_at":1,"move_learn_method":{"name":"level-up","url":"https://pokeapi.co/api/v2/move-learn-method/1/"},"version_group":{"name":"platinum","url":"https://pokeapi.co/api/v2/version-group/9/"}},{"level_learned_at":1,"move_learn_method":{"name":"level-up","url":"https://pokeapi.co/api/v2/move-learn-method/1/"},"version_group":{"name":"heartgold-soulsilver","url":"https://pokeapi.co/api/v2/version-group/10/"}},{"level_learned_at":1,"move_learn_method":{"name":"level-up","url":"https://pokeapi.co/api/v2/move-learn-method/1/"},"version_group":{"name":"black-white","url":"https://pokeapi.co/api/v2/version-group/11/"}},{"level_learned_at":1,"move_learn_method":{"name":"level-up","url":"https://pokeapi.co/api/v2/move-learn-method/1/"},"version_group":{"name":"colosseum","url":"https://pokeapi.co/api/v2/version-group/12/"}},{"level_learned_at":1,"move_learn_method":{"name":"level-up","url":"https://pokeapi.co/api/v2/move-learn-method/1/"},"version_group":{"name":"xd","url":"https://pokeapi.co/api/v2/version-group/13/"}},{"level_learned_at":1,"move_learn_method":{"name":"level-up","url":"https://pokeapi.co/api/v2/move-learn-method/1/"},"version_group":{"name":"black-2-white-2","url":"https://pokeapi.co/api/v2/version-group/14/"}},{"level_learned_at":1,"move_learn_method":{"name":"level-up","url":"https://pokeapi.co/api/v2/move-learn-method/1/"},"version_group":{"name":"x-y","url":"https://pokeapi.co/api/v2/version-group/15/"}},{"level_learned_at":1,"move_learn_method":{"name":"level-up","url":"https://pokeapi.co/api/v2/move-learn-method/1/"},"version_group":{"name":"omega-ruby-alpha-sapphire","url":"https://pokeapi.co/api/v2/version-group/16/"}},{"level_learned_at":1,"move_learn_method":{"name":"level-up","url":"https://pokeapi.co/api/v2/move-learn-method/1/"},"version_group":{"name":"sun-moon","url":"https://pokeapi.co/api/v2/version-group/17/"}},{"level_learned_at":1,"move_learn_method":{"name":"level-up","url":"https://pokeapi.co/api/v2/move-learn-method/1/"},"version_group":{"name":"ultra-sun-ultra-moon","url":"https://pokeapi.co/api/v2/v... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2024-09-14T19:17:41.543382" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/pokemon/ditto</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-09-14T19:17:41.213764" elapsed="0.329818"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2024-09-14T19:17:41.543954" elapsed="0.000580"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-09-14T19:17:41.590487" level="INFO">${name} = ['ditto']</msg>
+<var>${name}</var>
+<arg>${response.json()}</arg>
+<arg>name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-09-14T19:17:41.544825" elapsed="0.045934"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${name}[0]</arg>
+<arg>ditto</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-14T19:17:41.591242" elapsed="0.000729"/>
+</kw>
+<tag>Smoke</tag>
+<status status="PASS" start="2024-09-14T19:17:41.212587" elapsed="0.379745"/>
+</test>
+<status status="PASS" start="2024-09-14T19:17:33.109616" elapsed="8.483643"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
